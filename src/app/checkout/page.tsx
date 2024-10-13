@@ -37,7 +37,7 @@ export default function CardsPaymentMethod() {
   const [tokenAmount, setTokenAmount] = useState(
     searchParams.get("tokenAmount") ?? 0.05
   );
-  const [receivingChain, setReceivingChain] = useState("Arbitrum");
+  const [receivingChain, setReceivingChain] = useState("Stellar");
   const [trackingId, setTrackingId] = useState<null | string>(
     searchParams.get("trackingId") ?? null
   );
@@ -78,7 +78,7 @@ export default function CardsPaymentMethod() {
   const [clientToken, setClientToken] = useState<string | null>(null);
   const [dropinInstance, setDropinInstance] = useState<Dropin | null>(null);
 
-  const [fiatAmount, setFiatAmount] = useState(0);
+  const [fiatAmount, setFiatAmount] = useState(0.1);
   const [stellarHash, setStellarHash] = useState<null | string>(null);
 
   useEffect(() => {
@@ -159,6 +159,8 @@ export default function CardsPaymentMethod() {
       };
 
       setStellarHash(data.txHash);
+
+      console.log(data.txHash);
 
       toast({
         title: data.message,
@@ -268,7 +270,7 @@ export default function CardsPaymentMethod() {
                     <SelectValue placeholder="Chain" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="1">Arbitrum</SelectItem>
+                    <SelectItem value="1">Stellar</SelectItem>
                     <SelectItem value="2">Etereum</SelectItem>
                     <SelectItem value="3">Polygon</SelectItem>
                     <SelectItem value="4">Base</SelectItem>
@@ -310,12 +312,20 @@ export default function CardsPaymentMethod() {
 
           {mode === "paypal" && <>{!clientToken && <p>Loading...</p>}</>}
 
-          {mode === "paypal" && clientToken && (
-            <div id="dropin-container-div"></div>
-          )}
+          {clientToken && <div id="dropin-container-div"></div>}
         </CardContent>
         <CardFooter>
-          <Button className="w-full" onClick={handlePayment}>
+          <Button
+            disabled={isPaymentProcessing}
+            className="w-full"
+            onClick={() => {
+              if (mode === "usdc") {
+                handlePayment();
+              } else {
+                handlePaypalPayment();
+              }
+            }}
+          >
             Continue
           </Button>
         </CardFooter>

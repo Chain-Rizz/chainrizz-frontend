@@ -156,7 +156,7 @@ export default function ReceivePaymentPage() {
                 <SelectValue placeholder="Chain" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="1">Arbitrum</SelectItem>
+                <SelectItem value="1">Stellar</SelectItem>
                 <SelectItem value="2">Etereum</SelectItem>
                 <SelectItem value="3">Polygon</SelectItem>
                 <SelectItem value="4">Base</SelectItem>
@@ -182,7 +182,7 @@ export default function ReceivePaymentPage() {
             <Input
               id="number"
               placeholder="Amount in USDC"
-              value={tokenAmount}
+              // value={tokenAmount}
               onChange={(e) => setTokenAmount(parseFloat(e.target.value))}
             />
           </div>
@@ -196,13 +196,15 @@ export default function ReceivePaymentPage() {
           <Alert className="mt-3 w-full">
             <AlertTitle className="font-bold">Tx Hash:</AlertTitle>
             <AlertDescription>
-              <Link
-                href={`https://arbiscan.io/tx/${txHash}`}
-                className="underline break-words"
-                target="_blank"
-              >
-                {txHash}
-              </Link>
+              {
+                <Link
+                  href={`https://arbiscan.io/tx/${txHash}`}
+                  className="underline break-words"
+                  target="_blank"
+                >
+                  {txHash}
+                </Link>
+              }
             </AlertDescription>
           </Alert>
         </CardFooter>
