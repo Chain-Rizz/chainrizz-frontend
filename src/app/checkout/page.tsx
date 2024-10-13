@@ -23,18 +23,23 @@ import {
 import { toast } from "@/hooks/use-toast";
 import { axiosInstance } from "@/lib/axios";
 import processTransaction from "@/lib/bridge";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 
 export default function CardsPaymentMethod() {
   const router = useRouter();
+  const searchParams = useSearchParams();
 
   const [toAddress, setToAddress] = useState(
     "GDRN7CGVLG5SVYUXXZO3SXTU425HMTE7THN4QCZAPL6LZKNINR76OZ3N"
   );
-  const [tokenAmount, setTokenAmount] = useState(0.05);
+  const [tokenAmount, setTokenAmount] = useState(
+    searchParams.get("tokenAmount") ?? 0.05
+  );
   const [receivingChain, setReceivingChain] = useState("Arbitrum");
-  const [trackingId, setTrackingId] = useState<null | string>(null);
+  const [trackingId, setTrackingId] = useState<null | string>(
+    searchParams.get("trackingId") ?? null
+  );
 
   const [isPaymentProcessing, setIsPaymentProcessing] = useState(false);
 
@@ -45,10 +50,10 @@ export default function CardsPaymentMethod() {
       const txReceipt = await processTransaction({
         amount: tokenAmount.toString(),
         to: toAddress,
-        from: "GDRN7CGVLG5SVYUXXZO3SXTU425HMTE7THN4QCZAPL6LZKNINR76OZ3N",
+        from: "0xBe1113a214CA8057C7cD2609Adab905978FBDc6d",
       });
 
-      await axiosInstance.put(`/bridge/${trackingId}`, {
+      await axiosInstance.patch(`/bridge/${trackingId}`, {
         data: txReceipt.transactionHash,
       });
 

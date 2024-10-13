@@ -22,7 +22,7 @@ import {
 } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
 import { axiosInstance } from "@/lib/axios";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
@@ -32,7 +32,7 @@ export default function ReceivePaymentPage() {
   const [toAddress, setToAddress] = useState(
     "GDRN7CGVLG5SVYUXXZO3SXTU425HMTE7THN4QCZAPL6LZKNINR76OZ3N"
   );
-  const [tokenAmount, setTokenAmount] = useState(0.05);
+  const [tokenAmount, setTokenAmount] = useState(0.06);
   const [receivingChain, setReceivingChain] = useState("Stellar");
   const [token, setToken] = useState<"USDC" | "XLM">("USDC");
   const [trackingId, setTrackingId] = useState<null | string>(null);
@@ -47,6 +47,10 @@ export default function ReceivePaymentPage() {
     try {
       setIsPaymentProcessing(true);
       const trackingId = uuidv4();
+
+      await axiosInstance.post(`/bridge`, {
+        trackingId,
+      });
 
       const data = {
         toAddress,
@@ -94,10 +98,7 @@ export default function ReceivePaymentPage() {
 
         if (data.status === "COMPLETED") {
           clearInterval(checkStatus);
-
           setTxHash(data.data);
-
-          console.log(data);
 
           toast({
             title: "Payment Received",
