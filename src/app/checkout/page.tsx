@@ -20,15 +20,60 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { toast } from "@/hooks/use-toast";
+import { axiosInstance } from "@/lib/axios";
+import processTransaction from "@/lib/bridge";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function CardsPaymentMethod() {
+  const router = useRouter();
+
+  const [toAddress, setToAddress] = useState(
+    "GDRN7CGVLG5SVYUXXZO3SXTU425HMTE7THN4QCZAPL6LZKNINR76OZ3N"
+  );
+  const [tokenAmount, setTokenAmount] = useState(0.05);
+  const [receivingChain, setReceivingChain] = useState("Arbitrum");
+  const [trackingId, setTrackingId] = useState<null | string>(null);
+
+  const [isPaymentProcessing, setIsPaymentProcessing] = useState(false);
+
+  async function handlePayment() {
+    try {
+      setIsPaymentProcessing(true);
+
+      const txReceipt = await processTransaction({
+        amount: tokenAmount.toString(),
+        to: toAddress,
+        from: "GDRN7CGVLG5SVYUXXZO3SXTU425HMTE7THN4QCZAPL6LZKNINR76OZ3N",
+      });
+
+      await axiosInstance.put(`/bridge/${trackingId}`, {
+        data: txReceipt.transactionHash,
+      });
+
+      toast({
+        title: "Payment successful.",
+      });
+    } catch (err) {
+      console.log(err);
+
+      toast({
+        title: "An error occurred.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsPaymentProcessing(false);
+    }
+  }
+
   return (
     <div className="flex items-center justify-center h-screen overflow-x-auto p-4">
       <Card className="w-full max-w-screen-sm">
         <CardHeader>
-          <CardTitle>Payment Method</CardTitle>
+          <CardTitle>Make payment</CardTitle>
           <CardDescription>
-            Add a new payment method to your account.
+            Please pay using one of the following.
           </CardDescription>
         </CardHeader>
 
@@ -112,23 +157,38 @@ export default function CardsPaymentMethod() {
 
           <div className="grid gap-2">
             <Label htmlFor="city">Receipent Address</Label>
-            <Input id="city" placeholder="0x123..." />
+            <Input
+              id="city"
+              placeholder="0x123..."
+              value={toAddress}
+              onChange={(e) => setToAddress(e.target.value)}
+            />
           </div>
+
           <div className="grid gap-2">
             <Label htmlFor="number">Amount</Label>
-            <Input id="number" placeholder="Amount in USDC" />
+            <Input
+              id="number"
+              placeholder="Amount in USDC"
+              value={tokenAmount}
+              onChange={(e) => setTokenAmount(parseFloat(e.target.value))}
+            />
           </div>
+
           <div className="grid gap-2">
             <Label htmlFor="name">Email</Label>
             <Input
               id="email"
               placeholder="Email"
               defaultValue="user@gmail.com"
+              onChange={(e) => setToAddress(e.target.value)}
             />
           </div>
         </CardContent>
         <CardFooter>
-          <Button className="w-full">Continue</Button>
+          <Button className="w-full" onClick={handlePayment}>
+            Continue
+          </Button>
         </CardFooter>
       </Card>
     </div>
