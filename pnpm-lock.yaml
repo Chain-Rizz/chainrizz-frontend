@@ -32,6 +32,12 @@ importers:
       axios:
         specifier: ^1.7.7
         version: 1.7.7
+      braintree-web:
+        specifier: ^3.109.0
+        version: 3.109.0
+      braintree-web-drop-in:
+        specifier: ^1.43.0
+        version: 1.43.0
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
@@ -66,6 +72,12 @@ importers:
         specifier: ^4.6.0
         version: 4.6.0(bufferutil@4.0.8)(utf-8-validate@5.0.10)
     devDependencies:
+      '@headlessui/react':
+        specifier: ^2.1.10
+        version: 2.1.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@types/braintree-web-drop-in':
+        specifier: ^1.39.3
+        version: 1.39.3
       '@types/node':
         specifier: ^20
         version: 20.16.11
@@ -113,6 +125,39 @@ packages:
   '@babel/runtime@7.25.7':
     resolution: {integrity: sha512-FjoyLe754PMiYsFaN5C94ttGiOmBNYTf6pLr4xXHAT5uctHb092PBszndLDR5XA/jghQvn4n7JMHl7dmTgbm9w==}
     engines: {node: '>=6.9.0'}
+
+  '@braintree/asset-loader@2.0.0':
+    resolution: {integrity: sha512-7Zs3/g3lPTfkdtWr7cKh3tk1pDruXR++TXwGKkx7BPuTjjLNFul2JSfI+ScHzNU4u/gZNPNQagsSTlYxIhBgMA==}
+
+  '@braintree/asset-loader@2.0.1':
+    resolution: {integrity: sha512-OGAoBA5MRVsr5qg0sXM6NMJbqHnYZhBudtM6WGgpQnoX42fjUYbE6Y6qFuuerD5z3lsOAjnu80DooBs1VBuh5Q==}
+
+  '@braintree/browser-detection@1.17.2':
+    resolution: {integrity: sha512-DdEX09uYs6kHwGt4cbONlxlta/0hfmrDUncP6EtfZxFVywNF9LeRUyon+2LihJTbqgSnGqz9ZL450hkqBd6oSw==}
+
+  '@braintree/browser-detection@2.0.1':
+    resolution: {integrity: sha512-wpRI7AXEUh6o3ILrJbpNOYE7ItfjX/S8JZP7Z5FF66ULngBGYOqE8SeLlLKXG69Nc07HtlL/6nk/h539iz9hcQ==}
+
+  '@braintree/event-emitter@0.4.1':
+    resolution: {integrity: sha512-X41357O3OXUDlnwMvS1m0GQEn3zB3s3flOBeg2J5OBvLvdJEIAVpPkblABPtsPrlciDSvfv1aSG5ixHPgFH0Zg==}
+
+  '@braintree/extended-promise@1.0.0':
+    resolution: {integrity: sha512-E9529FJNG4OgeeLJ00vNs3TW67+AeSQobJg0hwfsQk29hgK4bVBsvQHVD4nwDuDD1Czon90K88gfQIFadAMs0w==}
+
+  '@braintree/iframer@2.0.0':
+    resolution: {integrity: sha512-x1kHOyIJNDvi4P1s6pVBZhqhBa1hqDG9+yzcsCR1oNVC0LxH9CAP8bKxioT8/auY1sUyy+D8T4Vp/jv7QqSqLQ==}
+
+  '@braintree/sanitize-url@7.0.4':
+    resolution: {integrity: sha512-hPYRrKFoI+nuckPgDJfyYAkybFvheo4usS0Vw0HNAe+fmGBQA5Az37b/yStO284atBoqqdOUhKJ3d9Zw3PQkcQ==}
+
+  '@braintree/uuid@0.1.0':
+    resolution: {integrity: sha512-YvZJdlNcK5EnR+7M8AjgEAf4Qx696+FOSYlPfy5ePn80vODtVAUU0FxHnzKZC0og1VbDNQDDiwhthR65D4Na0g==}
+
+  '@braintree/uuid@1.0.0':
+    resolution: {integrity: sha512-AtI5hfttWSuWAgcwLUZdcZ7Fp/8jCCUf9JTs7+Xow9ditU28zuoBovqq083yph2m3SxPYb84lGjOq+cXlXBvJg==}
+
+  '@braintree/wrap-promise@2.1.0':
+    resolution: {integrity: sha512-UIrJB+AfKU0CCfbMoWrsGpd2D/hBpY/SGgFI6WRHPOwhaZ3g9rz1weiJ6eb6L9KgVyunT7s2tckcPkbHw+NzeA==}
 
   '@eslint-community/eslint-utils@4.4.0':
     resolution: {integrity: sha512-1/sA4dwrzBAyeUoQ6oxahHKmrZvsnLCg4RfxW3ZFGGmQkSNQPFNLV9CUEFQP1x9EYXHTo5p6xdhZM1Ne9p/AfA==}
@@ -250,8 +295,21 @@ packages:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
 
+  '@floating-ui/react@0.26.24':
+    resolution: {integrity: sha512-2ly0pCkZIGEQUq5H8bBK0XJmc1xIK/RM3tvVzY3GBER7IOD1UgmC2Y2tjj4AuS+TC+vTE1KJv2053290jua0Sw==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+
   '@floating-ui/utils@0.2.8':
     resolution: {integrity: sha512-kym7SodPp8/wloecOpcmSnWJsK7M0E5Wg8UcFA+uO4B9s5d0ywXOEro/8HM9x0rW+TljRzul/14UYz3TleT3ig==}
+
+  '@headlessui/react@2.1.10':
+    resolution: {integrity: sha512-6mLa2fjMDAFQi+/R10B+zU3edsUk/MDtENB2zHho0lqKU1uzhAfJLUduWds4nCo8wbl3vULtC5rJfZAQ1yqIng==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: ^18
+      react-dom: ^18
 
   '@humanwhocodes/config-array@0.13.0':
     resolution: {integrity: sha512-DZLEEqFWQFiyK6h5YIeynKx7JlvCYWL0cImfSRXZ9l4Sg2efkFGTuFf6vzXjK1cq6IYkU+Eg/JizXw+TD2vRNw==}
@@ -378,6 +436,9 @@ packages:
   '@nolyfill/is-core-module@1.0.39':
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
+
+  '@paypal/accelerated-checkout-loader@1.1.0':
+    resolution: {integrity: sha512-S2KkIpq15VnxYyI0tycvfYiNsqdsg2a92El2huYUVLsWnBbubl8toYK8khaP5nnxZ0MGl9mEB9Y9axmfOw2Yvg==}
 
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
@@ -715,6 +776,37 @@ packages:
   '@radix-ui/rect@1.1.0':
     resolution: {integrity: sha512-A9+lCBZoaMJlVKcRBz2YByCG+Cp2t6nAnMnNba+XiWxnj6r4JUFqfsgwocMBZU9LPtdxC6wB56ySYpc7LQIoJg==}
 
+  '@react-aria/focus@3.18.3':
+    resolution: {integrity: sha512-WKUElg+5zS0D3xlVn8MntNnkzJql2J6MuzAMP8Sv5WTgFDse/XGR842dsxPTIyKKdrWVCRegCuwa4m3n/GzgJw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
+
+  '@react-aria/interactions@3.22.3':
+    resolution: {integrity: sha512-RRUb/aG+P0IKTIWikY/SylB6bIbLZeztnZY2vbe7RAG5MgVaCgn5HQ45SI15GlTmhsFG8CnF6slJsUFJiNHpbQ==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
+
+  '@react-aria/ssr@3.9.6':
+    resolution: {integrity: sha512-iLo82l82ilMiVGy342SELjshuWottlb5+VefO3jOQqQRNYnJBFpUSadswDPbRimSgJUZuFwIEYs6AabkP038fA==}
+    engines: {node: '>= 12'}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
+
+  '@react-aria/utils@3.25.3':
+    resolution: {integrity: sha512-PR5H/2vaD8fSq0H/UB9inNbc8KDcVmW6fYAfSWkkn+OAdhTTMVKqXXrZuZBWyFfSD5Ze7VN6acr4hrOQm2bmrA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
+
+  '@react-stately/utils@3.10.4':
+    resolution: {integrity: sha512-gBEQEIMRh5f60KCm7QKQ2WfvhB2gLUr9b72sqUdIZ2EG+xuPgaIlCBeSicvjmjBvYZwOjoOEnmIkcx2GHp/HWw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
+
+  '@react-types/shared@3.25.0':
+    resolution: {integrity: sha512-OZSyhzU6vTdW3eV/mz5i6hQwQUhkRs7xwY2d1aqPvTdMe0+2cY7Fwp45PAiwYLEj73i9ro2FxF9qC4DvHGSCgQ==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
+
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
 
@@ -824,17 +916,38 @@ packages:
     resolution: {integrity: sha512-+PmQX0PiAYPMeVYe237LJAYvOMYW1j2rH5YROyS3b4CTVJum34HfRvKvAzozHAQG0TnHNdUfY9nCeUyRAs//cw==}
     engines: {node: '>=14.16'}
 
+  '@tanstack/react-virtual@3.10.8':
+    resolution: {integrity: sha512-VbzbVGSsZlQktyLrP5nxE+vE1ZR+U0NFAWPbJLoG2+DKPwd2D7dVICTVIIaYlJqX1ZCEnYDbaOpmMwbsyhBoIA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+
+  '@tanstack/virtual-core@3.10.8':
+    resolution: {integrity: sha512-PBu00mtt95jbKFi6Llk9aik8bnR3tR/oQP1o3TSi+iG//+Q2RTIzCEgKkHG8BB86kxMNW6O8wku+Lmi+QFR6jA==}
+
+  '@types/applepayjs@14.0.8':
+    resolution: {integrity: sha512-Yzf5OSitdS+/G8cjaAkPJ0+pBOEf9Vik1XUCdw6ul7Qh6Xb18wTlG/sWA5jKIme3x4fbyTGlSd4mfkvdtP9mRw==}
+
   '@types/big.js@6.2.2':
     resolution: {integrity: sha512-e2cOW9YlVzFY2iScnGBBkplKsrn2CsObHQ2Hiw4V1sSyiGbgWL8IyqE3zFi1Pt5o1pdAtYkDAIsF3KKUPjdzaA==}
 
   '@types/bn.js@5.1.6':
     resolution: {integrity: sha512-Xh8vSwUeMKeYYrj3cX4lGQgFSF/N03r+tv4AiLl1SucqV+uTQpxRcnM8AkXKHwYP9ZPXOYXRr2KPXpVlIvqh9w==}
 
+  '@types/braintree-web-drop-in@1.39.3':
+    resolution: {integrity: sha512-JOxWhywrTRn91MpRar3JJ77J+T6wSJOf0X/r9NLqG0zAxW1BqfZjhv6QG5mt0dCcuDwwlVrEZfMCmhGsoOcUZw==}
+
+  '@types/braintree-web@3.96.15':
+    resolution: {integrity: sha512-Eg5TdfopjEWU2p81LCMUoA9SXDNDYi5DQ3+J9bmWVUqlYdvZHjZ+fxGCsus2Gdhfyuz1Z+UAG16B23zAY0yziA==}
+
   '@types/cacheable-request@6.0.3':
     resolution: {integrity: sha512-IQ3EbTzGxIigb1I3qPZc1rWJnH0BmSKv5QYTalEwweFvyBDLSAe24zP0le/hyi7ecGfZVlIVAg4BZqb8WBwKqw==}
 
   '@types/connect@3.4.38':
     resolution: {integrity: sha512-K6uROf1LD88uDQqJCktA4yzL1YYAK6NgfsI0v/mTgyPKWsX1CnJ0XPSDhViejru1GcRkLWb8RlzFYJRqGUbaug==}
+
+  '@types/googlepay@0.7.6':
+    resolution: {integrity: sha512-5003wG+qvf4Ktf1hC9IJuRakNzQov00+Xf09pAWGJLpdOjUrq0SSLCpXX7pwSeTG9r5hrdzq1iFyZcW7WVyr4g==}
 
   '@types/http-cache-semantics@4.0.4':
     resolution: {integrity: sha512-1m0bIFVc7eJWyve9S0RnuRgcQqF/Xd5QsUZAZeQFr1Q3/p9JWoQQEqmVy+DPTNpGXwhgIetAoYF8JSc33q29QA==}
@@ -850,6 +963,9 @@ packages:
 
   '@types/node@20.16.11':
     resolution: {integrity: sha512-y+cTCACu92FyA5fgQSAI8A1H429g7aSK2HsO7K4XYUWc4dY5IUz55JSDIYT6/VsOLfGy8vmvQYC2hfb0iF16Uw==}
+
+  '@types/paypal-checkout-components@4.0.8':
+    resolution: {integrity: sha512-Z3IWbFPGdgL3O+Bg+TyVmMT8S3uGBsBjw3a8uRNR4OlYWa9m895djENErJMYU8itoki9rtcQMzoHOSFn8NFb1A==}
 
   '@types/pbkdf2@3.1.2':
     resolution: {integrity: sha512-uRwJqmiXmh9++aSu1VNEn3iIxWOhd8AHXNSdlaLfdAAdSTY9jYVeGWnzejM3dvrkbqE3/hyQkQQ29IFATEGlew==}
@@ -1166,6 +1282,15 @@ packages:
     resolution: {integrity: sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==}
     engines: {node: '>=8'}
 
+  braintree-web-drop-in@1.43.0:
+    resolution: {integrity: sha512-lkUpQfYXR0CGtR7mPRR17AnZoYkHjhycxVnMGIPcWT6JPagEZcG/7tYyy34iWjYZeGa2wsquLBDV2Xeita962Q==}
+
+  braintree-web@3.103.0:
+    resolution: {integrity: sha512-gwmC5LSUP5VUC2HmUyaFnEyLjRRAo1iKKHS5eD9KIAZHB7cAQ2il1V1q2f5zdz7+7EE11eSHXznj6n/Qm6jp6w==}
+
+  braintree-web@3.109.0:
+    resolution: {integrity: sha512-89CLzvldYeSD0cxmInE1mq+viMl7sIGkVm74/6cX91pQWrrO+qaA4r2fpgrqPJ7gWJDQp+5YVa0HliwsbFBYTg==}
+
   brorand@1.1.0:
     resolution: {integrity: sha512-cKV8tMCEpQs4hK/ik71d6LrPOnpkpGBR0wzxqr68g2m/LB2GxVYQroAjMJZRVM1Y4BCjCKc3vAamxSzOY2RP+w==}
 
@@ -1236,6 +1361,9 @@ packages:
 
   caniuse-lite@1.0.30001668:
     resolution: {integrity: sha512-nWLrdxqCdblixUO+27JtGJJE/txpJlyUy5YN1u53wLZkP0emYCo5zgS6QYft7VUYR42LGgi/S5hdLZTrnyIddw==}
+
+  card-validator@10.0.0:
+    resolution: {integrity: sha512-2fLyCBOxO7/b56sxoYav8FeJqv9bWpZSyKq8sXKxnpxTGXHnM/0c8WEKG+ZJ+OXFcabnl98pD0EKBtTn+Tql0g==}
 
   caseless@0.12.0:
     resolution: {integrity: sha512-4tYFyifaFfGacoiObjJegolkwSU4xQNGbVgUiNYVUxbQ2x2lUsFvY4hVgVzGiIe6WLOPqycWXA40l+PWsxthUw==}
@@ -1343,6 +1471,12 @@ packages:
 
   create-hmac@1.1.7:
     resolution: {integrity: sha512-MJG9liiZ+ogc4TzUwuvbER1JRdgvUFSB5+VR/g5h82fGaIRWMWddtKBHi7/sVhfjQZ6SehlyhvQYrcYkaUIpLg==}
+
+  credit-card-type@10.0.1:
+    resolution: {integrity: sha512-vQOuWmBgsgG1ovGeDi8m6Zeu1JaqH/JncrxKmaqMbv/LunyOQdLiQhPHtOsNlbUI05TocR5nod/Mbs3HYtr6sQ==}
+
+  credit-card-type@9.1.0:
+    resolution: {integrity: sha512-CpNFuLxiPFxuZqhSKml3M+t0K/484pMAnfYWH14JoD7OZMnmC0Lmo+P7JX9SobqFpRoo7ifA18kOHdxJywYPEA==}
 
   cross-fetch@3.1.8:
     resolution: {integrity: sha512-cvA+JwZoU0Xq+h6WkMvAUqPEYy92Obet6UdKLfW60qn99ftItKjB5T+BkyWOFWe2pUyfQ+IJHmpOTznqk1M6Kg==}
@@ -1520,6 +1654,10 @@ packages:
     resolution: {integrity: sha512-LMHl3dXhTcfv8gM4kEzIUeTQ+7fpdA0l2tUf34BddXPkz2A5xJ5L/Pchd5BL6rdccM9QGvu0sWZzK1Z1t4wwyg==}
     engines: {node: '>=10.13.0'}
 
+  envify@4.1.0:
+    resolution: {integrity: sha512-IKRVVoAYr4pIx4yIWNsz9mOsboxlNXiu7TNBnem/K/uTHdkyzXWDzHCK7UTolqBbgaBz0tQHsD3YNls0uIIjiw==}
+    hasBin: true
+
   erc-20-abi@1.0.1:
     resolution: {integrity: sha512-RD2+5hlmIplcc4pqnu8iftEuXDoDKxMKOw0Zn0n3bd9cCsMu6sQyTfmdOj1J/emHm5Xx9RsQXo7PxoRvgsxuwQ==}
 
@@ -1676,6 +1814,11 @@ packages:
   espree@9.6.1:
     resolution: {integrity: sha512-oruZaFkjorTpF32kDSI5/75ViwGeZginGGy2NoOSg3Q9bnwlnmDm4HLnkl0RE3n+njDXR037aY1+x58Z/zFdwQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+
+  esprima@4.0.1:
+    resolution: {integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==}
+    engines: {node: '>=4'}
+    hasBin: true
 
   esquery@1.6.0:
     resolution: {integrity: sha512-ca9pw9fomFcKPvFLXhBKUK90ZvGibiGOvRJNbjljY7s7uq/5YO4BOzcYtJqExdx99rF6aAcnRxHmcUHcz6sQsg==}
@@ -1847,6 +1990,9 @@ packages:
   forwarded@0.2.0:
     resolution: {integrity: sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==}
     engines: {node: '>= 0.6'}
+
+  framebus@6.0.0:
+    resolution: {integrity: sha512-bL9V68hVaVBCY9rveoWbPFFI9hAXIJtESs51B+9XmzvMt38+wP8b4VdiJsavjMS6NfPZ/afQ/jc2qaHmSGI1kQ==}
 
   fresh@0.5.2:
     resolution: {integrity: sha512-zJ2mQYM18rEFOudeV4GShTGIQ7RbzA7ozbU9I/XBpm7kqgMywgmylMwXHxZJmkVoYkna9d2pVXVXPdYTP9ej8Q==}
@@ -2050,6 +2196,9 @@ packages:
 
   inherits@2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
+
+  inject-stylesheet@6.0.1:
+    resolution: {integrity: sha512-2fvune1D4+8mvJoLVo95ncY4HrDkIaYIReRzXv8tkWFgdG9iuc5QuX57gtSDPWTWQI/f5BGwwtH85wxHouzucg==}
 
   injectpromise@1.0.0:
     resolution: {integrity: sha512-qNq5wy4qX4uWHcVFOEU+RqZkoVG65FhvGkyDWbuBxILMjK6A1LFf5A1mgXZkD4nRx5FCorD81X/XvPKp/zVfPA==}
@@ -2724,6 +2873,9 @@ packages:
     resolution: {integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==}
     engines: {node: '>= 0.6.0'}
 
+  promise-polyfill@8.2.3:
+    resolution: {integrity: sha512-Og0+jCRQetV84U8wVjMNccfGCnMQ9mGs9Hv78QFe+pSDD3gWTpz0y+1QCuxy5d/vBFuZ3iwP2eycAkvqIMPmWg==}
+
   prop-types@15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
 
@@ -2877,6 +3029,9 @@ packages:
 
   responselike@2.0.1:
     resolution: {integrity: sha512-4gl03wn3hj1HP3yzgdI7d3lCkF95F21Pz4BPGvKHinyQzALR5CapwC8yIi0Rh58DEMQ/SguC03wFj2k0M/mHhw==}
+
+  restricted-input@3.0.5:
+    resolution: {integrity: sha512-lUuXZ3wUnHURRarj5/0C8vomWIfWJO+p7T6RYwB46v7Oyuyr3yyupU+i7SjqUv4S6RAeAAZt1C/QCLJ9xhQBow==}
 
   reusify@1.0.4:
     resolution: {integrity: sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==}
@@ -3111,6 +3266,9 @@ packages:
   swarm-js@0.1.42:
     resolution: {integrity: sha512-BV7c/dVlA3R6ya1lMlSSNPLYrntt0LUq4YMgy3iwpCIc6rZnS5W2wUoctarZ5pXlpKtxDDf9hNziEkcfrxdhqQ==}
 
+  tabbable@6.2.0:
+    resolution: {integrity: sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==}
+
   tailwind-merge@2.5.3:
     resolution: {integrity: sha512-d9ZolCAIzom1nf/5p4LdD5zvjmgSxY0BGgdSvmXIoMYAiPdAW/dSpP7joCDYFY7r/HkEa2qmPtkgsu0xjQeQtw==}
 
@@ -3233,6 +3391,11 @@ packages:
 
   typedarray-to-buffer@3.1.5:
     resolution: {integrity: sha512-zdu8XMNEDepKKR+XYOXAVPtWui0ly0NtohUscw+UmaHiAWT8hrV1rr//H6V+0DvJ3OQ19S979M0laLfX8rm82Q==}
+
+  typescript@4.9.5:
+    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
 
   typescript@5.6.3:
     resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
@@ -3657,6 +3820,28 @@ snapshots:
     dependencies:
       regenerator-runtime: 0.14.1
 
+  '@braintree/asset-loader@2.0.0': {}
+
+  '@braintree/asset-loader@2.0.1': {}
+
+  '@braintree/browser-detection@1.17.2': {}
+
+  '@braintree/browser-detection@2.0.1': {}
+
+  '@braintree/event-emitter@0.4.1': {}
+
+  '@braintree/extended-promise@1.0.0': {}
+
+  '@braintree/iframer@2.0.0': {}
+
+  '@braintree/sanitize-url@7.0.4': {}
+
+  '@braintree/uuid@0.1.0': {}
+
+  '@braintree/uuid@1.0.0': {}
+
+  '@braintree/wrap-promise@2.1.0': {}
+
   '@eslint-community/eslint-utils@4.4.0(eslint@8.57.1)':
     dependencies:
       eslint: 8.57.1
@@ -3964,7 +4149,24 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
+  '@floating-ui/react@0.26.24(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@floating-ui/react-dom': 2.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@floating-ui/utils': 0.2.8
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      tabbable: 6.2.0
+
   '@floating-ui/utils@0.2.8': {}
+
+  '@headlessui/react@2.1.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@floating-ui/react': 0.26.24(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-aria/focus': 3.18.3(react@18.3.1)
+      '@react-aria/interactions': 3.22.3(react@18.3.1)
+      '@tanstack/react-virtual': 3.10.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   '@humanwhocodes/config-array@0.13.0':
     dependencies:
@@ -4062,6 +4264,12 @@ snapshots:
       fastq: 1.17.1
 
   '@nolyfill/is-core-module@1.0.39': {}
+
+  '@paypal/accelerated-checkout-loader@1.1.0':
+    dependencies:
+      '@braintree/asset-loader': 2.0.0
+      envify: 4.1.0
+      typescript: 4.9.5
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
@@ -4388,6 +4596,46 @@ snapshots:
 
   '@radix-ui/rect@1.1.0': {}
 
+  '@react-aria/focus@3.18.3(react@18.3.1)':
+    dependencies:
+      '@react-aria/interactions': 3.22.3(react@18.3.1)
+      '@react-aria/utils': 3.25.3(react@18.3.1)
+      '@react-types/shared': 3.25.0(react@18.3.1)
+      '@swc/helpers': 0.5.13
+      clsx: 2.1.1
+      react: 18.3.1
+
+  '@react-aria/interactions@3.22.3(react@18.3.1)':
+    dependencies:
+      '@react-aria/ssr': 3.9.6(react@18.3.1)
+      '@react-aria/utils': 3.25.3(react@18.3.1)
+      '@react-types/shared': 3.25.0(react@18.3.1)
+      '@swc/helpers': 0.5.13
+      react: 18.3.1
+
+  '@react-aria/ssr@3.9.6(react@18.3.1)':
+    dependencies:
+      '@swc/helpers': 0.5.13
+      react: 18.3.1
+
+  '@react-aria/utils@3.25.3(react@18.3.1)':
+    dependencies:
+      '@react-aria/ssr': 3.9.6(react@18.3.1)
+      '@react-stately/utils': 3.10.4(react@18.3.1)
+      '@react-types/shared': 3.25.0(react@18.3.1)
+      '@swc/helpers': 0.5.13
+      clsx: 2.1.1
+      react: 18.3.1
+
+  '@react-stately/utils@3.10.4(react@18.3.1)':
+    dependencies:
+      '@swc/helpers': 0.5.13
+      react: 18.3.1
+
+  '@react-types/shared@3.25.0(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+
   '@rtsao/scc@1.1.0': {}
 
   '@rushstack/eslint-patch@1.10.4': {}
@@ -4569,11 +4817,33 @@ snapshots:
     dependencies:
       defer-to-connect: 2.0.1
 
+  '@tanstack/react-virtual@3.10.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@tanstack/virtual-core': 3.10.8
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@tanstack/virtual-core@3.10.8': {}
+
+  '@types/applepayjs@14.0.8': {}
+
   '@types/big.js@6.2.2': {}
 
   '@types/bn.js@5.1.6':
     dependencies:
       '@types/node': 20.16.11
+
+  '@types/braintree-web-drop-in@1.39.3':
+    dependencies:
+      '@types/applepayjs': 14.0.8
+      '@types/braintree-web': 3.96.15
+      '@types/googlepay': 0.7.6
+      '@types/paypal-checkout-components': 4.0.8
+
+  '@types/braintree-web@3.96.15':
+    dependencies:
+      '@types/googlepay': 0.7.6
+      '@types/paypal-checkout-components': 4.0.8
 
   '@types/cacheable-request@6.0.3':
     dependencies:
@@ -4585,6 +4855,8 @@ snapshots:
   '@types/connect@3.4.38':
     dependencies:
       '@types/node': 20.16.11
+
+  '@types/googlepay@0.7.6': {}
 
   '@types/http-cache-semantics@4.0.4': {}
 
@@ -4599,6 +4871,8 @@ snapshots:
   '@types/node@20.16.11':
     dependencies:
       undici-types: 6.19.8
+
+  '@types/paypal-checkout-components@4.0.8': {}
 
   '@types/pbkdf2@3.1.2':
     dependencies:
@@ -4977,6 +5251,50 @@ snapshots:
     dependencies:
       fill-range: 7.1.1
 
+  braintree-web-drop-in@1.43.0:
+    dependencies:
+      '@braintree/asset-loader': 2.0.1
+      '@braintree/browser-detection': 2.0.1
+      '@braintree/event-emitter': 0.4.1
+      '@braintree/uuid': 1.0.0
+      '@braintree/wrap-promise': 2.1.0
+      braintree-web: 3.103.0
+
+  braintree-web@3.103.0:
+    dependencies:
+      '@braintree/asset-loader': 2.0.1
+      '@braintree/browser-detection': 2.0.1
+      '@braintree/event-emitter': 0.4.1
+      '@braintree/extended-promise': 1.0.0
+      '@braintree/iframer': 2.0.0
+      '@braintree/sanitize-url': 7.0.4
+      '@braintree/uuid': 1.0.0
+      '@braintree/wrap-promise': 2.1.0
+      card-validator: 10.0.0
+      credit-card-type: 10.0.1
+      framebus: 6.0.0
+      inject-stylesheet: 6.0.1
+      promise-polyfill: 8.2.3
+      restricted-input: 3.0.5
+
+  braintree-web@3.109.0:
+    dependencies:
+      '@braintree/asset-loader': 2.0.1
+      '@braintree/browser-detection': 2.0.1
+      '@braintree/event-emitter': 0.4.1
+      '@braintree/extended-promise': 1.0.0
+      '@braintree/iframer': 2.0.0
+      '@braintree/sanitize-url': 7.0.4
+      '@braintree/uuid': 1.0.0
+      '@braintree/wrap-promise': 2.1.0
+      '@paypal/accelerated-checkout-loader': 1.1.0
+      card-validator: 10.0.0
+      credit-card-type: 10.0.1
+      framebus: 6.0.0
+      inject-stylesheet: 6.0.1
+      promise-polyfill: 8.2.3
+      restricted-input: 3.0.5
+
   brorand@1.1.0: {}
 
   browserify-aes@1.2.0:
@@ -5053,6 +5371,10 @@ snapshots:
   camelcase@5.3.1: {}
 
   caniuse-lite@1.0.30001668: {}
+
+  card-validator@10.0.0:
+    dependencies:
+      credit-card-type: 9.1.0
 
   caseless@0.12.0: {}
 
@@ -5165,6 +5487,10 @@ snapshots:
       ripemd160: 2.0.2
       safe-buffer: 5.2.1
       sha.js: 2.4.11
+
+  credit-card-type@10.0.1: {}
+
+  credit-card-type@9.1.0: {}
 
   cross-fetch@3.1.8:
     dependencies:
@@ -5352,6 +5678,11 @@ snapshots:
     dependencies:
       graceful-fs: 4.2.11
       tapable: 2.2.1
+
+  envify@4.1.0:
+    dependencies:
+      esprima: 4.0.1
+      through: 2.3.8
 
   erc-20-abi@1.0.1: {}
 
@@ -5683,6 +6014,8 @@ snapshots:
       acorn-jsx: 5.3.2(acorn@8.12.1)
       eslint-visitor-keys: 3.4.3
 
+  esprima@4.0.1: {}
+
   esquery@1.6.0:
     dependencies:
       estraverse: 5.3.0
@@ -5951,6 +6284,10 @@ snapshots:
 
   forwarded@0.2.0: {}
 
+  framebus@6.0.0:
+    dependencies:
+      '@braintree/uuid': 0.1.0
+
   fresh@0.5.2: {}
 
   fs-extra@4.0.3:
@@ -6196,6 +6533,8 @@ snapshots:
       wrappy: 1.0.2
 
   inherits@2.0.4: {}
+
+  inject-stylesheet@6.0.1: {}
 
   injectpromise@1.0.0: {}
 
@@ -6822,6 +7161,8 @@ snapshots:
 
   process@0.11.10: {}
 
+  promise-polyfill@8.2.3: {}
+
   prop-types@15.8.1:
     dependencies:
       loose-envify: 1.4.0
@@ -6998,6 +7339,10 @@ snapshots:
   responselike@2.0.1:
     dependencies:
       lowercase-keys: 2.0.0
+
+  restricted-input@3.0.5:
+    dependencies:
+      '@braintree/browser-detection': 1.17.2
 
   reusify@1.0.4: {}
 
@@ -7306,6 +7651,8 @@ snapshots:
       - supports-color
       - utf-8-validate
 
+  tabbable@6.2.0: {}
+
   tailwind-merge@2.5.3: {}
 
   tailwindcss-animate@1.0.7(tailwindcss@3.4.13):
@@ -7472,6 +7819,8 @@ snapshots:
   typedarray-to-buffer@3.1.5:
     dependencies:
       is-typedarray: 1.0.0
+
+  typescript@4.9.5: {}
 
   typescript@5.6.3: {}
 
