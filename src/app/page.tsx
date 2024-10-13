@@ -23,7 +23,7 @@ export default function Home() {
     const sdk = new AllbridgeCoreSdk({
       ...nodeRpcUrlsDefault,
       // ETH: getEnvVar("WEB3_PROVIDER_URL"),
-      ARB: "https://arbitrum-mainnet.infura.io/v3/9c923f4f0b0a4278bb83849196a5cdf8",
+      ARB: process.env.NEXT_PUBLIC_WEB3_PROVIDER_URL!,
     });
 
     const chains = await sdk.chainDetailsMap();
