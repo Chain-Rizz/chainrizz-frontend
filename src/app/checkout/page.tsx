@@ -82,6 +82,17 @@ export default function CardsPaymentMethod() {
   const [stellarHash, setStellarHash] = useState<null | string>(null);
 
   useEffect(() => {
+    async function fetchClientToken() {
+      const res = await axiosInstance.get("/paypal/client-token");
+      const clientToken = res.data as string;
+
+      setClientToken(clientToken);
+    }
+
+    fetchClientToken();
+  }, []);
+
+  useEffect(() => {
     async function initDropIn() {
       if (!clientToken) return;
 
