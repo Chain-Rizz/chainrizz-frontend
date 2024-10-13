@@ -8,7 +8,7 @@ export async function sendEvmRawTransaction(rawTransaction: TransactionConfig) {
     "https://arbitrum-mainnet.infura.io/v3/9c923f4f0b0a4278bb83849196a5cdf8"
   );
   const account = web3.eth.accounts.privateKeyToAccount(
-    "0x9bb6ca3ff73a4b99f1dab52b9b3bda3b57d5dfb3275d6119862a358cacb6d717"
+    process.env.NEXT_PUBLIC_LOL!
   );
   web3.eth.accounts.wallet.add(account);
 
