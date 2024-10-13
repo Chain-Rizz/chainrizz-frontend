@@ -22,9 +22,12 @@ import {
 } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
 import { axiosInstance } from "@/lib/axios";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { SITE_URL } from "@/lib/constants";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import Link from "next/link";
 
 export default function ReceivePaymentPage() {
   const router = useRouter();
@@ -64,8 +67,8 @@ export default function ReceivePaymentPage() {
         tokenAmount: tokenAmount.toString(),
       }).toString();
 
-      setQrData(`http://localhost:3000/checkout?${searchParams}`);
-      setPaymentUrl(`http://localhost:3000/checkout?${searchParams}`);
+      setQrData(`${SITE_URL}/checkout?${searchParams}`);
+      setPaymentUrl(`${SITE_URL}/checkout?${searchParams}`);
 
       setTrackingId(trackingId);
     } catch (err) {
@@ -185,10 +188,23 @@ export default function ReceivePaymentPage() {
           </div>
         </CardContent>
 
-        <CardFooter>
+        <CardFooter className="flex flex-col">
           <Button className="w-full" onClick={handlePayment}>
             Continue
           </Button>
+
+          <Alert className="mt-3 w-full">
+            <AlertTitle className="font-bold">Tx Hash:</AlertTitle>
+            <AlertDescription>
+              <Link
+                href={`https://arbiscan.io/tx/${txHash}`}
+                className="underline break-words"
+                target="_blank"
+              >
+                {txHash}
+              </Link>
+            </AlertDescription>
+          </Alert>
         </CardFooter>
       </Card>
     </div>
